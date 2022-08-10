@@ -1,6 +1,6 @@
 {
   "name": "@scrapeit-cloud/google-maps-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Real-Time Google Maps API",
   "main": "index.js",
   "scripts": {
