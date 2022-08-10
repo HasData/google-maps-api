@@ -17,9 +17,9 @@ Signup to Scrapeit Cloud to [get your API key](https://app.scrape-it.cloud/sign-
 
       try {
         const response = await scrapeit.scrape({
-          "keyword": "pizza",
+          "keyword": "plumber in new york",
+          "page": 1,
           "country": "US",
-          "num_results": 100,
           "domain": "com"
         });
 
@@ -31,4 +31,4 @@ Signup to Scrapeit Cloud to [get your API key](https://app.scrape-it.cloud/sign-
 
     main();
 
-You can find all the supported parameters on [Scrapeit Cloud documentation](https://scrape-it.cloud/docs/google-scraping-api/serp).
+You can find all the supported parameters on [Scrapeit Cloud documentation](https://scrape-it.cloud/docs/google-scraping-api/maps).
