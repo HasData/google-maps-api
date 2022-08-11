@@ -1,4 +1,4 @@
-# Google SERP API
+# Google Maps API
 [Scrapeit Cloud](https://scrape-it.cloud/) - Web Scraping API with Proxy Rotation. Get valuable data at scale in HTML format from any website without need for a proxy.
 
 Interface to call [Google Maps Scraper](https://scrape-it.cloud/google-maps-scraper) easily from Node.
