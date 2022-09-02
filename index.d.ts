@@ -2,7 +2,7 @@ declare type ScrapeitCloudAPIParams = {
   keyword: string,
   country: string,
   domain: string,
-  start?: string,
+  start?: number,
   ll?: string
 }
 
