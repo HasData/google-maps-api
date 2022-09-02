@@ -13,15 +13,14 @@
     "url": "git+https://github.com/Scrapeit-Cloud/google-maps-api.git"
   },
   "keywords": [
-    "google",
-    "maps",
-    "api",
-    "google",
-    "scraper",
-    "google",
+    "google maps",
+    "google maps api",
+    "google maps scraper",
+    "google scraper",
+    "maps api",
     "scraper",
     "scrapeit",
-    "sdk"
+    "scrapeit sdk"
   ],
   "author": "Roman Milyushkevich <roman@scrape-it.cloud>",
   "license": "MIT",

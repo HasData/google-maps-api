@@ -18,7 +18,6 @@ Signup to Scrapeit Cloud to [get your API key](https://app.scrape-it.cloud/sign-
       try {
         const response = await scrapeit.scrape({
           "keyword": "plumber in new york",
-          "page": 1,
           "country": "US",
           "domain": "com"
         });

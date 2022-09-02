@@ -1,8 +1,9 @@
 declare type ScrapeitCloudAPIParams = {
   keyword: string,
-  page: number,
   country: string,
   domain: string,
+  start?: string,
+  ll?: string
 }
 
 declare type Pagination = {
