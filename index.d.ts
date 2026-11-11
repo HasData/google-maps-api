@@ -1,19 +1,17 @@
 declare type ScrapeitCloudAPIParams = {
-  keyword: string,
-  country: string,
-  domain: string,
+  q?: string,
+  keyword?: string, // old name of q
+  gl?: string,
+  country?: string, // old name of gl
+  hl?: string,
+  domain?: string,
   start?: number,
   ll?: string
 }
 
-declare type Pagination = {
-  currentPage: number,
-  nextPage: number|null
-}
-
 declare type ScrapeitCloudAPIResponse = {
-  pagination: Pagination,
-  locals: Array<any>,
+  requestMetadata: Record<string, any>,
+  localResults: Array<any>,
 }
 
 declare class ScrapeitCloud {

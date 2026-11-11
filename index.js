@@ -1,6 +1,25 @@
 const { SCRAPE_IT_CLOUD_API_URL, SCRAPE_IT_CLOUD_API_ENDPOINT } = require('./const');
 const { doRequest } = require('./utils/http');
 
+// Old parameter names (keyword, country, domain: 'com') still work
+const toApiParams = ({ keyword, country, ...params }) => {
+  const result = { ...params };
+
+  if (keyword !== undefined && result.q === undefined) {
+    result.q = keyword;
+  }
+
+  if (country !== undefined && result.gl === undefined) {
+    result.gl = String(country).toLowerCase();
+  }
+
+  if (result.domain && !String(result.domain).startsWith('google.')) {
+    result.domain = `google.${result.domain}`;
+  }
+
+  return result;
+};
+
 class ScrapeitCloud {
   /**
      *
@@ -30,7 +49,7 @@ class ScrapeitCloud {
         'x-api-key': this.apiKey,
       },
       {
-        ...params,
+        ...toApiParams(params),
         source: 'nodejs_sdk'
       }
     );
@@ -51,8 +70,12 @@ class ScrapeitCloud {
       throw new Error(result.error);
     }
 
-    if (result.status === 'error') {
-      throw new Error(`${result.message}: ${JSON.stringify(result.errors || {})}`);
+    // HasData API errors: 401 { message }, 422 { errors }
+    const isApiError = !result.requestMetadata && (result.message || result.errors);
+
+    if (result.status === 'error' || isApiError) {
+      const message = result.message || 'Request failed';
+      throw new Error(`${message}: ${JSON.stringify(result.errors || {})}`);
     }
 
     return result;
